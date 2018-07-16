@@ -1,0 +1,9 @@
+language: python
+python:
+  - "3.5"
+  - "3.6"
+install:
+  - pip install pycodestyle
+script:
+  - pycodestyle --first webserver.py
+  - python3 -m doctest -v webserver.py
