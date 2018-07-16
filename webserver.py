@@ -80,7 +80,8 @@ def json_to_prometheus(measures_in_json):
 
 def get_measures():
     urllib.request.urlopen(DOMOTICZ_URL)
-    measures_json_as_str = urllib.request.urlopen(DOMOTICZ_URL).read().decode('utf8')
+    measures_json_as_str = urllib.request.urlopen(DOMOTICZ_URL)\
+        .read().decode('utf8')
     measures_json = json.loads(measures_json_as_str)
     return json_to_prometheus(measures_json)
 
